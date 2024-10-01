@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "title": "Reservation List Response",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "restaurantName", "customerName", "period", "reservationDate"],
+    "properties": {
+      "id": {
+        "type": "integer"
+      },
+      "restaurantName": {
+        "type": "string"
+      },
+      "customerName": {
+        "type": "string"
+      },
+      "period": {
+        "type": "string"
+      },
+      "reservationDate": {
+        "type": "string",
+        "format": "date"
+      }
+    }
+  }
+}

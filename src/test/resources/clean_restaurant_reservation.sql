@@ -1,0 +1,1 @@
+DELETE FROM restaurant_reservations;

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="1" author="angelovlima">
+        <!-- Tabela restaurants -->
+        <createTable tableName="restaurants">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="period" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="address" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cuisine" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="capacity" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <!-- Tabela customers -->
+        <createTable tableName="customers">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="contact" type="VARCHAR(255)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+        </createTable>
+
+        <!-- Tabela restaurant_reservations -->
+        <createTable tableName="restaurant_reservations">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="restaurant_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="customer_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="period" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="reservation_date" type="DATE">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addForeignKeyConstraint baseTableName="restaurant_reservations"
+                                 baseColumnNames="restaurant_id"
+                                 constraintName="fk_reservation_restaurant"
+                                 referencedTableName="restaurants"
+                                 referencedColumnNames="id"/>
+
+        <addForeignKeyConstraint baseTableName="restaurant_reservations"
+                                 baseColumnNames="customer_id"
+                                 constraintName="fk_reservation_customer"
+                                 referencedTableName="customers"
+                                 referencedColumnNames="id"/>
+
+        <!-- Tabela restaurant_ratings -->
+        <createTable tableName="restaurant_ratings">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="stars" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+            <column name="restaurant_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="customer_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addForeignKeyConstraint baseTableName="restaurant_ratings"
+                                 baseColumnNames="restaurant_id"
+                                 constraintName="fk_rating_restaurant"
+                                 referencedTableName="restaurants"
+                                 referencedColumnNames="id"/>
+
+        <addForeignKeyConstraint baseTableName="restaurant_ratings"
+                                 baseColumnNames="customer_id"
+                                 constraintName="fk_rating_customer"
+                                 referencedTableName="customers"
+                                 referencedColumnNames="id"/>
+
+        <!-- Tabela restaurant_comments -->
+        <createTable tableName="restaurant_comments">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="comment" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="restaurant_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="customer_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addForeignKeyConstraint baseTableName="restaurant_comments"
+                                 baseColumnNames="restaurant_id"
+                                 constraintName="fk_comment_restaurant"
+                                 referencedTableName="restaurants"
+                                 referencedColumnNames="id"/>
+
+        <addForeignKeyConstraint baseTableName="restaurant_comments"
+                                 baseColumnNames="customer_id"
+                                 constraintName="fk_comment_customer"
+                                 referencedTableName="customers"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+</databaseChangeLog>

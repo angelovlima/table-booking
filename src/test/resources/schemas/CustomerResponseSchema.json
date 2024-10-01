@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "title": "Customer Response",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "name",
+    "contact"
+  ],
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "name": {
+      "type": "string"
+    },
+    "contact": {
+      "type": "string"
+    }
+  }
+}

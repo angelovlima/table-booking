@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "title": "Restaurant List Response",
+  "type": "array",
+  "additionalProperties": false,
+  "items": {
+    "type": "object",
+    "required": [
+      "id",
+      "name",
+      "address",
+      "cuisine",
+      "capacity",
+      "period"
+    ],
+    "properties": {
+      "id": {
+        "type": "integer"
+      },
+      "name": {
+        "type": "string"
+      },
+      "address": {
+        "type": "string"
+      },
+      "cuisine": {
+        "type": "string"
+      },
+      "capacity": {
+        "type": "integer"
+      },
+      "period": {
+        "type": "string"
+      }
+    }
+  }
+}
