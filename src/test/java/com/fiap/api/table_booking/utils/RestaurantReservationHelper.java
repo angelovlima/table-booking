@@ -5,7 +5,6 @@ import com.fiap.api.table_booking.api.model.UpdateRestaurantReservationApiReques
 import com.fiap.api.table_booking.infrastructure.RestaurantJpaEntity;
 import com.fiap.api.table_booking.infrastructure.RestaurantReservationJpaEntity;
 import com.fiap.api.table_booking.infrastructure.CustomerJpaEntity;
-import org.springframework.test.context.jdbc.Sql;
 
 import java.time.LocalDate;
 import java.util.Random;

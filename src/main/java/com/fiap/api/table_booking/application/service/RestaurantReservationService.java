@@ -76,7 +76,7 @@ public class RestaurantReservationService implements IRestaurantReservationServi
     public RestaurantReservationJpaEntity findReservationById(Long id) {
         Optional<RestaurantReservationJpaEntity> reservation = reservationRepository.findById(id);
         if (reservation.isEmpty()) {
-            throw new RuntimeException("Reserva não encontrada");
+            throw new ResourceNotFoundException("Reserva não encontrada");
         }
         return reservation.get();
     }

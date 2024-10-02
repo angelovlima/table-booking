@@ -7,6 +7,8 @@ import com.fiap.api.table_booking.infrastructure.RestaurantCommentJpaEntity;
 
 public interface IRestaurantCommentApiMapper {
     RestaurantCommentJpaEntity toDomainEntity(CreateRestaurantCommentApiRequest request);
+
     RestaurantCommentJpaEntity toDomainEntity(UpdateRestaurantCommentApiRequest request);
+
     RestaurantCommentApiResponse toApiResponse(RestaurantCommentJpaEntity comment);
 }

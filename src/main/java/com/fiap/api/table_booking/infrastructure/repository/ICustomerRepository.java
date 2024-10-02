@@ -9,7 +9,10 @@ import java.util.Optional;
 @Repository
 public interface ICustomerRepository {
     CustomerJpaEntity save(CustomerJpaEntity customerJpaEntity);
+
     List<CustomerJpaEntity> findAll();
+
     void deleteById(Long id);
+
     Optional<CustomerJpaEntity> findById(Long id);
 }

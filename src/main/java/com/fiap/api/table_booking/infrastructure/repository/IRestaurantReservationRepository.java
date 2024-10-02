@@ -10,8 +10,12 @@ import java.util.Optional;
 @Repository
 public interface IRestaurantReservationRepository {
     RestaurantReservationJpaEntity save(RestaurantReservationJpaEntity reservation);
+
     List<RestaurantReservationJpaEntity> findAll();
+
     void deleteById(Long id);
+
     Optional<RestaurantReservationJpaEntity> findById(Long id);
+
     List<RestaurantReservationJpaEntity> findAllByRestaurantIdAndReservationDate(Long restaurantId, LocalDate reservationDate);
 }

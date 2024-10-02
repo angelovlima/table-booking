@@ -46,8 +46,7 @@ class JpaRestaurantRepositoryTest {
         // Act
         var foundRestaurant = restaurantRepository.findById(1L);
         // Assert
-        assertThat(foundRestaurant).isPresent();
-        assertThat(foundRestaurant.get()).isEqualTo(restaurant);
+        assertThat(foundRestaurant).isPresent().contains(restaurant);
         verify(restaurantRepository, times(1)).findById(1L);
     }
 

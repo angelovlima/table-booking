@@ -7,6 +7,8 @@ import com.fiap.api.table_booking.infrastructure.RestaurantRatingJpaEntity;
 
 public interface IRestaurantRatingApiMapper {
     RestaurantRatingJpaEntity toDomainEntity(CreateRestaurantRatingApiRequest request);
+
     RestaurantRatingJpaEntity toDomainEntity(UpdateRestaurantRatingApiRequest request);
+
     RestaurantRatingApiResponse toApiResponse(RestaurantRatingJpaEntity rating);
 }

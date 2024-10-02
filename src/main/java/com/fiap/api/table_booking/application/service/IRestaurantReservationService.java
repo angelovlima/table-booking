@@ -6,7 +6,10 @@ import java.util.List;
 
 public interface IRestaurantReservationService {
     RestaurantReservationJpaEntity createReservation(RestaurantReservationJpaEntity reservation);
+
     RestaurantReservationJpaEntity updateReservation(RestaurantReservationJpaEntity reservation);
+
     List<RestaurantReservationJpaEntity> getAllReservations();
+
     void deleteReservation(Long id);
 }

@@ -6,7 +6,10 @@ import java.util.List;
 
 public interface IRestaurantCommentService {
     RestaurantCommentJpaEntity createComment(RestaurantCommentJpaEntity comment);
+
     RestaurantCommentJpaEntity updateComment(RestaurantCommentJpaEntity comment);
+
     List<RestaurantCommentJpaEntity> getAllComments();
+
     void deleteComment(Long id);
 }

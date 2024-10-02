@@ -1,6 +1,6 @@
 package com.fiap.api.table_booking.infrastructure;
+
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

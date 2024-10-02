@@ -16,7 +16,7 @@ public class CustomerValidation {
     }
 
     public void validateCustomerDataUpdate(Customer customer) {
-        if(customer.getId() == null) {
+        if (customer.getId() == null) {
             throw new InvalidCustomerDataException("O id do cliente é obrigatório.");
         }
         if (customer.getName() == null || customer.getName().trim().isEmpty()) {

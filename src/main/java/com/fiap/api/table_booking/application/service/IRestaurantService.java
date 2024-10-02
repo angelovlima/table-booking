@@ -6,11 +6,18 @@ import java.util.List;
 
 public interface IRestaurantService {
     RestaurantJpaEntity createRestaurant(RestaurantJpaEntity restaurant);
+
     RestaurantJpaEntity updateRestaurant(RestaurantJpaEntity restaurant);
+
     List<RestaurantJpaEntity> getAllRestaurants();
+
     void deleteRestaurant(Long id);
+
     RestaurantJpaEntity getRestaurantById(Long id);
+
     List<RestaurantJpaEntity> findRestaurantsByName(String name);
+
     List<RestaurantJpaEntity> findRestaurantsByLocation(String location);
+
     List<RestaurantJpaEntity> findRestaurantsByCuisine(String cuisine);
 }

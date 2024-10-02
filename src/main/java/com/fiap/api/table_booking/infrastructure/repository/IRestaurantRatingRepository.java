@@ -9,7 +9,10 @@ import java.util.Optional;
 @Repository
 public interface IRestaurantRatingRepository {
     RestaurantRatingJpaEntity save(RestaurantRatingJpaEntity rating);
+
     List<RestaurantRatingJpaEntity> findAll();
+
     void deleteById(Long id);
+
     Optional<RestaurantRatingJpaEntity> findById(Long id);
 }

@@ -9,10 +9,16 @@ import java.util.Optional;
 @Repository
 public interface IRestaurantRepository {
     RestaurantJpaEntity save(RestaurantJpaEntity restaurantJpaEntity);
+
     List<RestaurantJpaEntity> findAll();
+
     void deleteById(Long id);
+
     Optional<RestaurantJpaEntity> findById(Long id);
+
     List<RestaurantJpaEntity> findByNameContainingIgnoreCase(String name);
+
     List<RestaurantJpaEntity> findByAddressContainingIgnoreCase(String address);
+
     List<RestaurantJpaEntity> findByCuisineContainingIgnoreCase(String cuisine);
 }

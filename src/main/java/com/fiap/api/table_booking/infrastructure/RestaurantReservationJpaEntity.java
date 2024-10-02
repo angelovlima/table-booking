@@ -1,4 +1,5 @@
 package com.fiap.api.table_booking.infrastructure;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
