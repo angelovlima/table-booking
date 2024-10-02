@@ -48,3 +48,35 @@ Para acessar a documentação Swagger e visualizar os endpoints detalhados, aces
 ```
 http://localhost:8080/swagger-ui.html
 ```
+
+6. **Deploy AWS**
+
+conecte-se em sua instância AWS
+
+```bash
+ssh ec2-user@ec2-3-15-13-69.us-east-2.compute.amazonaws.com
+```
+
+Atualize a máquina e instale o Java
+
+```bash
+sudo yum update
+
+sudo yum install java-17-amazon-corretto-headless
+
+java --version
+```
+
+No terminal do projeto, copie o jar para sua instância
+
+```bash
+scp .\target\table-booking-api-1.0.0-SNAPSHOT.jar ec2-user@ec2-3-15-13-69.us-east-2.compute.amazonaws.com:/home/ec2-user
+```
+
+Acesse a instância pelo terminal e rode o jar
+
+```bash
+ssh ec2-user@ec2-3-15-13-69.us-east-2.compute.amazonaws.com
+
+java -jar table-booking-api-1.0.0-SNAPSHOT.jar
+```
